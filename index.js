@@ -7,6 +7,11 @@ const findMinimum = (n, a, b)=>{
     if(a.length > n || b.length > n){
         return -1
     }
+    const checkA = a.find(data => data<0 || data>1)
+    const checkB = b.find(data => data<1 || data>1000000)
+    if(checkA != undefined || checkB != undefined){
+        return -1
+    }
 
     //Solution
     const allArr = a.map((num, index)=>{
